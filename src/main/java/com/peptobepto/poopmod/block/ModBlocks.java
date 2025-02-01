@@ -24,6 +24,10 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.FROGSPAWN)));
 
+    public static final DeferredBlock<Block> RAH = registerBlock("rah",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.WET_GRASS)));
+
     public static final DeferredBlock<Block> GREEBLE = registerBlock("greeble",
             () -> new DropExperienceBlock(UniformInt.of(2,4),
             BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.GLASS)));

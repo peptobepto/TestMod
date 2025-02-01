@@ -81,6 +81,7 @@ public class PoopMod {
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.POOP_BLOCK);
             event.accept(ModBlocks.GREEBLE);
+            event.accept(ModBlocks.RAH);
         }
     }
     // You can use SubscribeEvent and let the Event Bus discover methods to call
