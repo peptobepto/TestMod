@@ -1,5 +1,6 @@
 package com.peptobepto.poopmod;
 
+import com.peptobepto.poopmod.block.ModBlocks;
 import com.peptobepto.poopmod.item.ModItems;
 import org.slf4j.Logger;
 
@@ -50,6 +51,7 @@ public class PoopMod {
         modEventBus.addListener(this::commonSetup);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
@@ -73,6 +75,12 @@ public class PoopMod {
             event.accept(ModItems.GREEG);
             event.accept(ModItems.JAKOB);
             event.accept(ModItems.BOKAJ);
+
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.POOP_BLOCK);
+            event.accept(ModBlocks.GREEBLE);
         }
     }
     // You can use SubscribeEvent and let the Event Bus discover methods to call
