@@ -32,6 +32,11 @@ public class ModBlocks {
             () -> new DropExperienceBlock(UniformInt.of(2,4),
             BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.GLASS)));
 
+    public static final DeferredBlock<Block> BIGJAKOB = registerBlock("bigjakob",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(3f).requiresCorrectToolForDrops().sound(SoundType.ANVIL)));
+
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

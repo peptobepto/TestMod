@@ -1,6 +1,7 @@
 package com.peptobepto.poopmod;
 
 import com.peptobepto.poopmod.block.ModBlocks;
+import com.peptobepto.poopmod.item.ModCreativeModeTabs;
 import com.peptobepto.poopmod.item.ModItems;
 import org.slf4j.Logger;
 
@@ -57,6 +58,8 @@ public class PoopMod {
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+
+        ModCreativeModeTabs.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
@@ -82,6 +85,7 @@ public class PoopMod {
             event.accept(ModBlocks.POOP_BLOCK);
             event.accept(ModBlocks.GREEBLE);
             event.accept(ModBlocks.RAH);
+            event.accept(ModBlocks.BIGJAKOB);
         }
     }
     // You can use SubscribeEvent and let the Event Bus discover methods to call
